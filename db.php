@@ -6,7 +6,7 @@
     $conn = mysqli_connect(
         'localhost',//Ruta se conección a la DB
         'root',// Usuario de la DB
-        'root',// Contraseña DB
+        '',// Contraseña DB
         'fazt-crud-php'// Nombre de la DB
     );
     

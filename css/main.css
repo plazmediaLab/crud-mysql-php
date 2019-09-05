@@ -1,0 +1,10 @@
+ul.navbar-nav{
+    margin: 0;
+}
+ul.navbar-nav small{
+    color: var(--disabled-color-d);
+    font-weight: bold;
+}
+ul.navbar-nav li:not(:last-child){
+    font-size: 2rem;
+}

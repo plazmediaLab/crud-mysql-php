@@ -11,7 +11,7 @@
         }
 
         $_SESSION['message'] = 'Task removed successfully';
-        $_SESSION['message_type'] = 'danger';
+        $_SESSION['message_type'] = 'error';
         header('location: index.php');
     }
 

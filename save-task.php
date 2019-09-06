@@ -17,12 +17,12 @@
             }
     
             $_SESSION['message'] = "Task saved succesfully";
-            $_SESSION['message_type'] = "success";
+            $_SESSION['message_type'] = "ok";
     
             header("Location: index.php");
         } else{
             $_SESSION['message'] = "The fields cannot be empty";
-            $_SESSION['message_type'] = "warning";
+            $_SESSION['message_type'] = "info";
             header("Location: index.php");
         }
     }

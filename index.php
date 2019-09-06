@@ -6,21 +6,19 @@
     <div class="container p-4">
         <div class="row">
             <div class="col-md-4">
-                <div class="card card-body">
+                <div class="card card-body vm-m">
                     <form action="save-task.php" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="title" class="form-control" placeholder="Task title" autofocus>
+                        <div class="">
+                            <input type="text" name="title" class="form-component" placeholder="Task title" autofocus>
+                            <textarea name="description" rows="2" class="form-component form-text" placeholder="Task description"></textarea>
                         </div>
-                        <div class="form-group">
-                            <textarea name="description" rows="2" class="form-control" placeholder="Task description"></textarea>
-                        </div>
-                        <input type="submit" value="Save Task" class="btn btn-success btn-block" name="save_task">
+                        <input type="submit" value="Save Task" class="btn btn-ok btn-block-100" name="save_task">
                     </form>
 
                 </div>
 
                 <?php if(isset($_SESSION['message'])){ ?>
-                        <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show mt-3" role="alert">
+                        <div class="msn msn-<?= $_SESSION['message_type'] ?> alert-dismissible fade show mt-3" role="alert">
                             <?= $_SESSION['message'] ?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -52,10 +50,9 @@
                                 <td><?php echo $row['description'] ?></td>
                                 <td><?php echo $row['create_id'] ?></td>
                                 <td>
-                                    <a href="edit-task.php?id=<?php echo $row['id'] ?>" class="btn btn-primary btn-sm">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                    <a href="delete-task.php?id=<?php echo $row['id'] ?>" class="btn btn-danger btn-sm">
+                                    <a href="edit-task.php?id=<?php echo $row['id'] ?>" class="btn-s btn-primary ml-xs">
+                                        <i class="fas fa-edit"></i>                       </a>
+                                    <a href="delete-task.php?id=<?php echo $row['id'] ?>" class="btn-s btn-cancel ml-xs">
                                         <i class="far fa-trash-alt"></i>
                                     </a>
                                 </td>

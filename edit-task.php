@@ -28,7 +28,7 @@
         mysqli_query($conn, $query);
 
         $_SESSION['message'] = 'Task update successfully';
-        $_SESSION['message_type'] = 'info';
+        $_SESSION['message_type'] = 'primary';
         header("location: index.php");
     }
 ?>
@@ -36,26 +36,22 @@
 <?php include('includes/_header.php'); ?>
 
 <div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card card-body">
-                <h6 class="card-title">Task created on:</h6>
-                <h6 class="card-subtitle mb-3 ml-3 mt-1 text-muted"><?php echo $date; ?></h6>
-                <form action="edit-task.php?id=<?php echo $_GET['id']; ?>" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="title" value="<?php echo $title; ?>" class="form-control" placeholder="New task name">
-                    </div>
-                    <div class="form-group">
-                        <textarea rows="2" name="description" class="form-control" placeholder="New task description"><?php echo $description; ?></textarea>
-                    </div>
-                    <div class="from-group">
-                        <button class="btn btn-success btn-block" name="update">
-                            <i class="fas fa-save"></i>
-                             Update  
-                        </button>
-                    </div>
-                </form>
-            </div>
+    <div class="card mt-m box-shadow-m">
+        <div class="card-header-b">
+            <h4 class="card-title">Task created on:</h4>
+            <h5 class="card-subtitle"><?php echo $date; ?></h5>
+        </div>
+        <div class="card-body">
+            <form action="edit-task.php?id=<?php echo $_GET['id']; ?>" method="POST">
+                <div class="">
+                    <input type="text" name="title" value="<?php echo $title; ?>" class="form-component" placeholder="New task name" autofocus>
+                    <textarea rows="2" name="description" class="form-component form-text" placeholder="New task description"><?php echo $description; ?></textarea>
+                </div>
+                <button class="btn btn-plaz btn-block-100" name="update">
+                    <i class="fas fa-save"></i>
+                        Update  
+                </button>
+            </form>
         </div>
     </div>
 </div>
